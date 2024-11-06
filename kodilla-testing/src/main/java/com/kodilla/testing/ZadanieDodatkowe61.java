@@ -20,5 +20,7 @@ public class ZadanieDodatkowe61 {
         System.out.println("ZadanieDodatkowe");
         OnlyVowels onlyVowels = new OnlyVowels();
         System.out.println(onlyVowels.onlyVowels("Zadanie Dodatkowe"));
+
+        ;
     }
 }
