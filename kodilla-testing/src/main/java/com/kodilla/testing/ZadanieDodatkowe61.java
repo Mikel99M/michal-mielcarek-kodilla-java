@@ -1,5 +1,9 @@
 package com.kodilla.testing;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
 class OnlyVowels {
 
     public String onlyVowels(String text) {
@@ -21,6 +25,5 @@ public class ZadanieDodatkowe61 {
         OnlyVowels onlyVowels = new OnlyVowels();
         System.out.println(onlyVowels.onlyVowels("Zadanie Dodatkowe"));
 
-        ;
     }
 }
