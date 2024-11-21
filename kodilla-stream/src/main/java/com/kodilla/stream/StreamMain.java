@@ -12,6 +12,8 @@ import com.kodilla.stream.person.People;
 import com.kodilla.stream.reference.FunctionalCalculator;
 
 
+import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -125,7 +127,7 @@ public class StreamMain {
         Forum forum = new Forum();
         Map<Integer, String> theZadanieList = forum.getList().stream()
                 .filter(user -> user.getSex() == 'M')
-                .filter(user -> user.getDateOfBirth().getYear() <= 2004)
+                .filter(user -> user.getDateOfBirth().getYear() <= LocalDate.now().minusYears(20).getYear())
                 .filter(user -> user.getNumOfPosts() >= 1)
                 .collect(Collectors.toMap(ForumUser::getId, ForumUser::getName));
 
