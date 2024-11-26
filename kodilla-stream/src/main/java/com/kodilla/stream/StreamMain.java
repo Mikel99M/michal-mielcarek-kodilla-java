@@ -127,7 +127,8 @@ public class StreamMain {
         Forum forum = new Forum();
         Map<Integer, String> theZadanieList = forum.getList().stream()
                 .filter(user -> user.getSex() == 'M')
-                .filter(user -> user.getDateOfBirth().getYear() <= LocalDate.now().minusYears(20).getYear())
+//                .filter(user -> user.getDateOfBirth().getYear() <= LocalDate.now().minusYears(20).getYear())
+                .filter(user -> user.getDateOfBirth().plusYears(19).isAfter(LocalDate.now()))
                 .filter(user -> user.getNumOfPosts() >= 1)
                 .collect(Collectors.toMap(ForumUser::getId, ForumUser::getName));
 
