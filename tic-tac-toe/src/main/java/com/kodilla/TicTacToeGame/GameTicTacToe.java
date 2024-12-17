@@ -124,7 +124,10 @@ public class GameTicTacToe {
             playerOne.makeMove(scanner);
             counterOfMoves++; // counter of moves in case there's a tie
             if (counterOfMoves == numOfRows * numOfCols) {
-                break;
+                if (winnerChecker.checkIfWinner(board, 'X')) {
+                    winner = "Player One";
+                    break;
+                }
             }
             System.out.println(board.updateBoard(playerOne.getBoardAfterChoice()));
             if (winnerChecker.checkIfWinner(board, 'X')) {
@@ -135,7 +138,10 @@ public class GameTicTacToe {
             playerTwo.makeMove(scanner);
             counterOfMoves++;
             if (counterOfMoves == numOfRows * numOfCols) {
-                break;
+                if (winnerChecker.checkIfWinner(board, 'O')) {
+                    winner = "Player Two";
+                    break;
+                }
             }
             System.out.println(board.updateBoard(playerTwo.getBoardAfterChoice()));
             if (winnerChecker.checkIfWinner(board, 'O')) {
