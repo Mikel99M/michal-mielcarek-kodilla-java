@@ -1,75 +1,77 @@
 package com.kodilla.TicTacToeGame;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 
 public class ChoiceOfMove {
 
-    private Scanner scanner = new Scanner(System.in);
-    private int choice;
-//    private List<Integer> moves = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
-    private char[][] theBoard;
-    private char sign;
     private Board board;
-    private List<Integer> moves;
+    private char sign;
+    private char[][] theBoard;
+    private int coordinateX;
+    private int coordinateY;
 
     public ChoiceOfMove(Board board, char sign) {
         this.board = board;
-        this.theBoard = board.getBoard();
         this.sign = sign;
-        this.moves = board.getMoves();
+        this.theBoard = board.getBoard();
     }
 
-    public void makeMove() {
+    // MAIN FUNCTION HERE. MAKES A MOVE BY THE PLAYER ON THE BOARD
+    public void makeMove(Scanner scanner) {
 
-        // in case player types something different thatn int
-        boolean validInput = false;
-        while (validInput == false) {
-            if (scanner.hasNextInt()) {
-                choice = scanner.nextInt();
-                validInput = true;
-            } else {
-                System.out.println("Please enter a number.");
+        // checking if coordinate X is a an integer and is valid
+        while (true) {
+            System.out.println("Coordinate X:");
+            try {
+                coordinateX = scanner.nextInt() - 1;
+                if (coordinateX >= 0 && coordinateX < board.getNumOfCols()) {
+                    break;
+                } else {
+                    System.out.println("Invalid number");
+                }
+            } catch (InputMismatchException e) {
                 scanner.nextLine();
             }
         }
 
-        if (moves.contains(choice)) {
-            moves.remove(Integer.valueOf(choice));
-            if (choice == 1) {
-                theBoard[0][0] = sign;
-            } else if (choice == 2) {
-                theBoard[0][1] = sign;
-            } else if (choice == 3) {
-                theBoard[0][2] = sign;
-            } else if (choice == 4) {
-                theBoard[1][0] = sign;
-            } else if (choice == 5) {
-                theBoard[1][1] = sign;
-            } else if (choice == 6) {
-                theBoard[1][2] = sign;
-            } else if (choice == 7) {
-                theBoard[2][0] = sign;
-            } else if (choice == 8) {
-                theBoard[2][1] = sign;
-            } else if (choice == 9) {
-                theBoard[2][2] = sign;
+        while (true) {
+            System.out.println("Coordinate Y:");
+            try {
+                coordinateY = scanner.nextInt() - 1;
+                if (coordinateY >= 0 && coordinateY < board.getNumOfRows()) {
+                    break;
+                } else {
+                    System.out.println("Invalid number");
+                }
+            } catch (InputMismatchException e) {
+                scanner.nextLine();
             }
+        }
+
+        if (theBoard[coordinateY][coordinateX] == ' ') {
+            theBoard[coordinateY][coordinateX] = sign;
         } else {
             System.out.println("Invalid move");
-            this.makeMove();
+            this.makeMove(scanner);
+        }
+    }
+
+    // THIS MAKES RANDOM MOVES
+    public void makeRandomMove(Board board, char sign) {
+        Random rand = new Random();
+        int coordinateX = rand.nextInt(theBoard.length);
+        int coordinateY = rand.nextInt(theBoard.length);
+        if (theBoard[coordinateY][coordinateX] == ' ') {
+            theBoard[coordinateY][coordinateX] = sign;
+        } else {
+            this.makeRandomMove(board, sign);
         }
     }
 
     public char[][] getBoardAfterChoice() {
         return theBoard;
     }
-
-    public char getSign() {
-        return sign;
-    }
-
 
 }

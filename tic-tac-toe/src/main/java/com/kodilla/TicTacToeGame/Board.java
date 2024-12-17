@@ -1,51 +1,49 @@
 package com.kodilla.TicTacToeGame;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class Board {
 
+    private int numOfRows;
+    private int numOfCols;
     private char[][] board;
-
-    private char[] row1 = new char[3];
-    private char[] row2 = new char[3];
-    private char[] row3 = new char[3];
-
     private String boardString;
 
-    private ChoiceOfMove choiceOfMove = new ChoiceOfMove(this, ' ');
+    public String createBoard(int numOfRows, int numOfCols) {
+        this.numOfRows = numOfRows;
+        this.numOfCols = numOfCols;
 
-    private List<Integer> moves = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
+        board = new char[numOfCols][numOfRows];
 
-    public String createBoard() {
-
-        for (int i = 0; i < 3; i++) {
-            row1[i] = ' ';
-            row2[i] = ' ';
-            row3[i] = ' ';
+        for (char[] row: board) {
+            Arrays.fill(row, ' ');
         }
 
-        board = new char[3][3];
-        board[0] = row1;
-        board[1] = row2;
-        board[2] = row3;
+        boardString = "";
 
-        boardString = "" +
-                "|"+ board[0][0] +"|"+ board[0][1] +"|"+ board[0][2] +"|\n" +
-                "|"+ board[1][0] +"|"+ board[1][1] +"|"+ board[1][2] +"|\n" +
-                "|"+ board[2][0] +"|"+ board[2][1] +"|"+ board[2][2] +"|"
-                ;
+        for (char[] row: board) {
+            for (char c: row) {
+                boardString += "|";
+                boardString += c;
+            }
+            boardString += "|\n";
+        }
+
         return boardString;
     }
 
     public String updateBoard(char[][] boardAfterChoice) {
         board = boardAfterChoice;
-        String boardString = "" +
-                "|"+ board[0][0] +"|"+ board[0][1] +"|"+ board[0][2] +"|\n" +
-                "|"+ board[1][0] +"|"+ board[1][1] +"|"+ board[1][2] +"|\n" +
-                "|"+ board[2][0] +"|"+ board[2][1] +"|"+ board[2][2] +"|"
-                ;
+        boardString = "";
+
+        for (char[] row: board) {
+            for (char c: row) {
+                boardString += "|";
+                boardString += c;
+            }
+            boardString += "|\n";
+        }
+
         return boardString;
     }
 
@@ -53,7 +51,12 @@ public class Board {
         return board;
     }
 
-    public List<Integer> getMoves() {
-        return moves;
+    public int getNumOfRows() {
+        return numOfRows;
     }
+
+    public int getNumOfCols() {
+        return numOfCols;
+    }
+
 }
