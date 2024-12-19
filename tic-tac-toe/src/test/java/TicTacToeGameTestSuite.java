@@ -4,6 +4,7 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.Assertions;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 
 public class TicTacToeGameTestSuite {
@@ -30,7 +31,7 @@ public class TicTacToeGameTestSuite {
 
         @Test
         @DisplayName("testing: A tie")
-        void testOne() {
+        void testOne() throws IOException {
             simulatedInput += "1\n1\n1\n2\n2\n1\n2\n2\n3\n2\n3\n1\n1\n3\n2\n3\n3\n3"; // Player One wins on the first row
             simulatedInput += "\nn\nn";
             InputStream inputStream = new ByteArrayInputStream(simulatedInput.getBytes());
@@ -51,7 +52,7 @@ public class TicTacToeGameTestSuite {
 
             @Test
             @DisplayName("testing: if 'X' wins in rows")
-            void testOne() {
+            void testOne() throws IOException {
 
                 simulatedInput += "1\n1\n3\n3\n2\n1\n3\n2\n3\n1"; // Player One wins on the first row
                 simulatedInput += inputEnding;
@@ -69,7 +70,7 @@ public class TicTacToeGameTestSuite {
 
             @Test
             @DisplayName("testing: if 'X' wins in columns")
-            void testTwo() {
+            void testTwo() throws IOException {
 
                 simulatedInput += "1\n1\n3\n3\n1\n2\n3\n2\n1\n3"; // Player One wins on the first column
                 simulatedInput += inputEnding;
@@ -87,7 +88,7 @@ public class TicTacToeGameTestSuite {
 
             @Test
             @DisplayName("testing: if 'X' wins in diagonal")
-            void testThree() {
+            void testThree() throws IOException {
 
                 simulatedInput += "1\n1\n3\n1\n2\n2\n3\n2\n3\n3"; // Player One wins on the diagonal from left to right
                 simulatedInput += inputEnding;
@@ -109,7 +110,7 @@ public class TicTacToeGameTestSuite {
         class o {
             @Test
             @DisplayName("testing: if 'O' wins in rows")
-            void testOne() {
+            void testOne() throws IOException {
 
                 simulatedInput += "1\n2\n1\n1\n2\n3\n2\n1\n3\n3\n3\n1"; // Player Two wins on the first row
                 simulatedInput += inputEnding;
@@ -127,7 +128,7 @@ public class TicTacToeGameTestSuite {
 
             @Test
             @DisplayName("testing: if 'O' wins in columns")
-            void testTwo() {
+            void testTwo() throws IOException {
 
                 simulatedInput += "2\n2\n1\n1\n2\n3\n1\n2\n3\n3\n1\n3"; // Player Two wins on the first column
                 simulatedInput += inputEnding;
@@ -145,7 +146,7 @@ public class TicTacToeGameTestSuite {
 
             @Test
             @DisplayName("testing: if 'O' wins in diagonal")
-            void testThree() {
+            void testThree() throws IOException {
 
                 simulatedInput += "1\n2\n1\n1\n1\n3\n2\n2\n2\n3\n3\n3"; // Player Two wins on the diagonal from left to right
                 simulatedInput += inputEnding;
@@ -180,7 +181,7 @@ public class TicTacToeGameTestSuite {
 
             @Test
             @DisplayName("testing: if 'X' wins in rows")
-            void testOne() {
+            void testOne() throws IOException {
                 //Given
                 simulatedInput += "2\n2\n1\n1\n3\n2\n2\n1\n4\n2\n3\n3\n5\n2\n10\n10\n6\n2"; // X wins in the second row starting from X:2 Y:2
                 simulatedInput += inputEnding;

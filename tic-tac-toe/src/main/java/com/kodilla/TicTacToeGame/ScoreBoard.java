@@ -10,7 +10,7 @@ public class ScoreBoard {
     private File file;
 
     public ScoreBoard() {
-        this.file = new File("C:\\Users\\48534\\dev\\kodilla-course\\kodilla-course\\tic-tac-toe\\src\\main\\java\\com\\kodilla\\TicTacToeGame\\TicTacToeScoreBoard.txt");
+        this.file = new File("C:\\Users\\48534\\OneDrive\\TicTacToeScoreBoard.txt");
         try {
             if (!file.exists()) {
                 file.createNewFile();
