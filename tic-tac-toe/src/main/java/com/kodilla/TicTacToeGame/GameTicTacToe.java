@@ -1,5 +1,6 @@
 package com.kodilla.TicTacToeGame;
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -15,7 +16,10 @@ public class GameTicTacToe {
     private Board board;
     private WinnerChecker winnerChecker;
 
-    public void play() {
+    public GameTicTacToe() throws IOException {
+    }
+
+    public void play() throws IOException {
 
         scanner = new Scanner(System.in);
 
@@ -91,17 +95,20 @@ public class GameTicTacToe {
     public void playSinglePlayer() {
         int counterOfMoves = 0; // counter of moves in case there's a tie
         while (true) {
+            // player
             System.out.println("Make your move Player One:");
             playerOne.makeMove(scanner);
-            counterOfMoves++; // counter of moves in case there's a tie
-            if (counterOfMoves == numOfRows * numOfCols) {
-                break;
-            }
+            counterOfMoves++;
+
             System.out.println(board.updateBoard(playerOne.getBoardAfterChoice()));
             if (winnerChecker.checkIfWinner(board, 'X')) {
                 winner = "Player One";
                 break;
             }
+            if (counterOfMoves == numOfRows * numOfCols) {
+                break;
+            }
+
             // COMPUTER PLAYER THAT MAKES RANDOM MOVES
             System.out.println("Computer makes his move: ");
             playerTwo.makeRandomMove(board, 'O');
@@ -120,38 +127,37 @@ public class GameTicTacToe {
     public void playMultiplayer() {
         int counterOfMoves = 0;
         while (true) {
+            // player one
             System.out.println("Make your move Player One:");
             playerOne.makeMove(scanner);
-            counterOfMoves++; // counter of moves in case there's a tie
-            if (counterOfMoves == numOfRows * numOfCols) {
-                if (winnerChecker.checkIfWinner(board, 'X')) {
-                    winner = "Player One";
-                    break;
-                }
-            }
+            counterOfMoves++;
+
             System.out.println(board.updateBoard(playerOne.getBoardAfterChoice()));
             if (winnerChecker.checkIfWinner(board, 'X')) {
                 winner = "Player One";
                 break;
             }
+            if (counterOfMoves == numOfRows * numOfCols) {
+                break;
+            }
+
+            // player two
             System.out.println("Make your move Player Two:");
             playerTwo.makeMove(scanner);
             counterOfMoves++;
-            if (counterOfMoves == numOfRows * numOfCols) {
-                if (winnerChecker.checkIfWinner(board, 'O')) {
-                    winner = "Player Two";
-                    break;
-                }
-            }
+
             System.out.println(board.updateBoard(playerTwo.getBoardAfterChoice()));
             if (winnerChecker.checkIfWinner(board, 'O')) {
                 winner = "Player Two";
                 break;
             }
+            if (counterOfMoves == numOfRows * numOfCols) {
+                break;
+            }
         }
     }
 
-    public void endingTerminal() {
+    public void endingTerminal() throws IOException {
         if (winner.isBlank()) {
             System.out.println("It's a tie!");
         } else if (winner.equals("Computer")) {

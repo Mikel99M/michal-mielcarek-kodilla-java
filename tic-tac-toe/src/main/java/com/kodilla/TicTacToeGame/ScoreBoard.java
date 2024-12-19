@@ -9,43 +9,38 @@ public class ScoreBoard {
 
     private File file;
 
-    public ScoreBoard() {
+    public ScoreBoard() throws IOException {
         this.file = new File("C:\\Users\\48534\\OneDrive\\TicTacToeScoreBoard.txt");
-        try {
-            if (!file.exists()) {
-                file.createNewFile();
-            }
-        } catch (IOException e) {
+
+        if (!file.exists()) {
+            file.createNewFile();
         }
+
     }
 
-    public void showScoreBoard() {;
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            String line;
-            while((line = reader.readLine()) != null) {
-                System.out.println(line);
-            }
-            reader.close();
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
+    public void showScoreBoard() throws IOException {
+        ;
+        BufferedReader reader = new BufferedReader(new FileReader(file));
+        String line;
+        while ((line = reader.readLine()) != null) {
+            System.out.println(line);
         }
+        reader.close();
+
     }
 
-    public void updateScoreBoard(String name) {
+    public void updateScoreBoard(String name) throws IOException {
 
         Map<String, Integer> scores = new HashMap<String, Integer>();
 
-        try {
-            String line;
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            while((line = reader.readLine()) != null) {
-                String[] scoresToAdd = line.split(": ");
-                scores.put(scoresToAdd[0], Integer.parseInt(scoresToAdd[1]));
-            }
-            reader.close();
-        } catch (IOException e) {
+
+        String line;
+        BufferedReader reader = new BufferedReader(new FileReader(file));
+        while ((line = reader.readLine()) != null) {
+            String[] scoresToAdd = line.split(": ");
+            scores.put(scoresToAdd[0], Integer.parseInt(scoresToAdd[1]));
         }
+        reader.close();
 
         // updating the score
         if (scores.keySet().contains(name)) {
@@ -55,25 +50,20 @@ public class ScoreBoard {
         }
 
         // updating the ScoreBoard txt file
-        try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(file));
-            for (Map.Entry<String, Integer> entry : scores.entrySet()) {
-                writer.write(entry.getKey() + ": " + entry.getValue() + "\n");
-            }
-            writer.close();
-        } catch (IOException e) {
+        BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+        for (Map.Entry<String, Integer> entry : scores.entrySet()) {
+            writer.write(entry.getKey() + ": " + entry.getValue() + "\n");
         }
+        writer.close();
     }
 
 
-    public void resetScoreBoard() {
+    public void resetScoreBoard() throws IOException {
 
-        try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(file));
-            writer.write("");
-            writer.close();
-        } catch (IOException e) {
-        }
+        BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+        writer.write("");
+        writer.close();
+
     }
 }
 
