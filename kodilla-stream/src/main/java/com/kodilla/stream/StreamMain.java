@@ -13,10 +13,12 @@ import com.kodilla.stream.reference.FunctionalCalculator;
 
 
 import java.time.LocalDate;
-import java.util.Arrays;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import static java.time.temporal.ChronoUnit.*;
 
 public class StreamMain {
     public static void main(String[] args) {
@@ -127,8 +129,7 @@ public class StreamMain {
         Forum forum = new Forum();
         Map<Integer, String> theZadanieList = forum.getList().stream()
                 .filter(user -> user.getSex() == 'M')
-//                .filter(user -> user.getDateOfBirth().getYear() <= LocalDate.now().minusYears(20).getYear())
-                .filter(user -> user.getDateOfBirth().plusYears(19).isAfter(LocalDate.now()))
+                .filter(user -> ChronoUnit.YEARS.between(user.getDateOfBirth(), LocalDate.now()) >= 20)
                 .filter(user -> user.getNumOfPosts() >= 1)
                 .collect(Collectors.toMap(ForumUser::getId, ForumUser::getName));
 
