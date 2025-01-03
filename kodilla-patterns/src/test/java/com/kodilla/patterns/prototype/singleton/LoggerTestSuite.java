@@ -1,6 +1,6 @@
-package com.kodilla.patterns.singleton;
+package com.kodilla.patterns.prototype.singleton;
 
-import com.kodilla.singleton.Logger;
+import com.kodilla.patterns.singleton.Logger;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;

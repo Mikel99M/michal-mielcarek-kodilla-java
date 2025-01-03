@@ -1,6 +1,6 @@
-package com.kodilla.patterns.singleton;
+package com.kodilla.patterns.prototype.singleton;
 
-import com.kodilla.singleton.SettingsFileEngine;
+import com.kodilla.patterns.singleton.SettingsFileEngine;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
