@@ -1,4 +1,4 @@
-package com.kodilla.patterns.spring.library;
+package com.kodilla.spring.library;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.kodilla.patterns.spring.forum;
+package com.kodilla.spring.forum;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class ForumUserTestSuite {
 
     @Test
-    void testGetUsername() {
+    void testGetUserName() {
         //Given
         ApplicationContext context =
                 new AnnotationConfigApplicationContext("com.kodilla.spring");
@@ -22,5 +22,9 @@ class ForumUserTestSuite {
 
         //Then
         assertEquals("John Smith", result);
+    }
+
+    @Test
+    void contextLoads() {
     }
 }

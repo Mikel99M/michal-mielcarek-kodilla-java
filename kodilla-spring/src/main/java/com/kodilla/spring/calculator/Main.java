@@ -1,4 +1,4 @@
-package com.kodilla.patterns.spring.calculator;
+package com.kodilla.spring.calculator;
 
 public class Main {
     public static void main(String[] args) {

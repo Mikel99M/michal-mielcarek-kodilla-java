@@ -1,4 +1,4 @@
-package com.kodilla.patterns.spring.kodillaspring;
+package com.kodilla.spring.kodillaspring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
