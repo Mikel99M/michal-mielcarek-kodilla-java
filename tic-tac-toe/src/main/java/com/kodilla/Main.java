@@ -1,5 +1,7 @@
 package com.kodilla;
 
+import com.kodilla.TicTacToeGame.GameTicTacToe;
+
 import java.io.IOException;
 
 public class Main {
