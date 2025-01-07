@@ -1,4 +1,4 @@
-package com.kodilla.spring.calculator;
+package com.kodilla.spring.kodillaspring.calculator;
 
 import org.springframework.stereotype.Component;
 
@@ -31,4 +31,5 @@ public class Calculator {
         display.displayValue(result);
         return result;
     }
+
 }

@@ -1,4 +1,4 @@
-package com.kodilla.spring.calculator;
+package com.kodilla.spring.kodillaspring.calculator;
 
 public class Display {
 
