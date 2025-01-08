@@ -7,8 +7,8 @@ public class Calculator {
 
     private Display display;
 
-    public Calculator() {
-        display = new Display();
+    public Calculator(Display display) {
+        this.display = display;
     }
 
     public double add(double a, double b) {
