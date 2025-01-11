@@ -1,0 +1,50 @@
+CREATE TABLE ISSUESLISTS
+(
+    ID SERIAL PRIMARY KEY,
+    NAME VARCHAR(100)
+);
+
+CREATE TABLE ISSUES
+(
+    ID SERIAL PRIMARY KEY,
+    ISSUESLIST_ID BIGINT UNSIGNED NOT NULL,
+    SUMMARY VARCHAR(1024),
+    DESCRIPTION VARCHAR(1024),
+    FOREIGN KEY (ISSUESLIST_ID) REFERENCES ISSUESLISTS(ID)
+);
+
+COMMIT;
+
+INSERT INTO ISSUESLISTS (NAME) VALUES ('ToDo');
+INSERT INTO ISSUESLISTS (NAME) VALUES ('In Progress');
+INSERT INTO ISSUESLISTS (NAME) VALUES ('Done');
+
+SELECT * FROM ISSUESLISTS;
+
+# To Do Issues (ID 1)
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION) VALUES
+    (1, 'Buy groceries', 'Need to buy milk, eggs, and bread'),
+    (1, 'Fix the printer', 'It keeps jamming'),
+    (1, 'Schedule dentist appointment', 'For a routine checkup'),
+    (1, 'Clean the oven', 'Lots of grease buildup'),
+    (1, 'Write blog post', 'About the benefits of meditation');
+
+# In Progress Issues (ID 2)
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION) VALUES
+    (2, 'Redesign website', 'Need a more modern look'),
+    (2, 'Implement new feature', 'Add user feedback functionality'),
+    (2, 'Prepare for presentation', 'On new project proposals'),
+    (2, 'Complete report', 'Monthly performance review'),
+    (2, 'Update software', 'Latest security patch');
+
+# Done Issues (ID 3)
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION) VALUES
+    (3, 'Fix leaky faucet', 'Kitchen sink was dripping'),
+    (3, 'Pay electricity bill', 'Due last week'),
+    (3, 'Finish reading book', 'Finished "To Kill a Mockingbird"'),
+    (3, 'Send thank you emails', 'To conference attendees'),
+    (3, 'Backup data', 'All important documents are now backed up');
+
+COMMIT;
+
+SELECT * FROM ISSUES;
