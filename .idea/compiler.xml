@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="21">
-      <module name="kodilla-course.kodilla-spring.main" target="17" />
-      <module name="kodilla-course.kodilla-spring.test" target="17" />
-      <module name="kodilla-JDBC.main" target="17" />
-      <module name="kodilla-JDBC.test" target="17" />
-      <module name="kodilla-spring-web" target="17" />
-      <module name="kodilla-spring-web.main" target="17" />
-      <module name="kodilla-spring-web.test" target="17" />
-      <module name="kodilla-spring-web_main" target="17" />
-      <module name="kodilla-spring-web_test" target="17" />
-      <module name="kodilla-spring_main" target="17" />
-      <module name="kodilla-spring_test" target="17" />
+    <bytecodeTargetLevel target="17">
+      <module name="kodilla-hibernate" target="21" />
+      <module name="kodilla-hibernate.main" target="21" />
+      <module name="kodilla-hibernate.test" target="21" />
     </bytecodeTargetLevel>
   </component>
 </project>

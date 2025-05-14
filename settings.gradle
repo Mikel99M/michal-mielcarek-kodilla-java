@@ -8,4 +8,8 @@ include 'kodilla-good-patterns'
 include 'kodilla-spring'
 include 'kodilla-patterns'
 include 'tic-tac-toe'
+include 'kodilla-spring-web'
+include 'kodilla-JDBC'
+include 'kodilla-sudoku'
+include 'kodilla-hibernate'
 

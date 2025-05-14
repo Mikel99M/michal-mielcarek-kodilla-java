@@ -1,4 +1,4 @@
-package com.kodilla.spring.shape;
+package com.kodilla.spring.kodillaspring.shape;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

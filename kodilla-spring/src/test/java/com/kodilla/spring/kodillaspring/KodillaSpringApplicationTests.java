@@ -1,10 +1,7 @@
 package com.kodilla.spring.kodillaspring;
 
-import com.kodilla.spring.forum.ForumUser;
-import com.kodilla.spring.shape.Circle;
-import com.kodilla.spring.shape.Shape;
-import com.kodilla.spring.shape.Square;
-import com.kodilla.spring.shape.Triangle;
+import com.kodilla.spring.kodillaspring.forum.ForumUser;
+import com.kodilla.spring.kodillaspring.shape.Shape;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;

@@ -13,7 +13,7 @@ public class TicTacToeGameTestSuite {
     String inputEnding;
 
     @BeforeEach
-    void setUp() {
+    void setUp() throws IOException {
         GameTicTacToe game = new GameTicTacToe();
         inputEnding = "\nn\nn\nn";
     }
@@ -83,7 +83,6 @@ public class TicTacToeGameTestSuite {
 
                 // Then
                 Assertions.assertEquals("Player One", game.getWinner());
-
             }
 
             @Test

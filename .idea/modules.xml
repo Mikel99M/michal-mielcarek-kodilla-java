@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kodilla-good-patterns/kodilla-course.kodilla-good-patterns.main.iml" filepath="$PROJECT_DIR$/.idea/modules/kodilla-good-patterns/kodilla-course.kodilla-good-patterns.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kodilla-good-patterns/kodilla-course.kodilla-good-patterns.test.iml" filepath="$PROJECT_DIR$/.idea/modules/kodilla-good-patterns/kodilla-course.kodilla-good-patterns.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kodilla-patterns/kodilla-course.kodilla-patterns.main.iml" filepath="$PROJECT_DIR$/.idea/modules/kodilla-patterns/kodilla-course.kodilla-patterns.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kodilla-patterns/kodilla-course.kodilla-patterns.test.iml" filepath="$PROJECT_DIR$/.idea/modules/kodilla-patterns/kodilla-course.kodilla-patterns.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kodilla-spring/kodilla-course.kodilla-spring.main.iml" filepath="$PROJECT_DIR$/.idea/modules/kodilla-spring/kodilla-course.kodilla-spring.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kodilla-spring/kodilla-course.kodilla-spring.test.iml" filepath="$PROJECT_DIR$/.idea/modules/kodilla-spring/kodilla-course.kodilla-spring.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kodilla-stream/kodilla-course.kodilla-stream.main.iml" filepath="$PROJECT_DIR$/.idea/modules/kodilla-stream/kodilla-course.kodilla-stream.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kodilla-stream/kodilla-course.kodilla-stream.test.iml" filepath="$PROJECT_DIR$/.idea/modules/kodilla-stream/kodilla-course.kodilla-stream.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kodilla-testing/kodilla-course.kodilla-testing.main.iml" filepath="$PROJECT_DIR$/.idea/modules/kodilla-testing/kodilla-course.kodilla-testing.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kodilla-testing/kodilla-course.kodilla-testing.test.iml" filepath="$PROJECT_DIR$/.idea/modules/kodilla-testing/kodilla-course.kodilla-testing.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kodilla-course.main.iml" filepath="$PROJECT_DIR$/.idea/modules/kodilla-course.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kodilla-course.test.iml" filepath="$PROJECT_DIR$/.idea/modules/kodilla-course.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tic-tac-toe/kodilla-course.tic-tac-toe.main.iml" filepath="$PROJECT_DIR$/.idea/modules/tic-tac-toe/kodilla-course.tic-tac-toe.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tic-tac-toe/kodilla-course.tic-tac-toe.test.iml" filepath="$PROJECT_DIR$/.idea/modules/tic-tac-toe/kodilla-course.tic-tac-toe.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Patterns2/Patterns2.iml" filepath="$PROJECT_DIR$/Patterns2/Patterns2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kodilla-hibernate/kodilla-course.kodilla-hibernate.main.iml" filepath="$PROJECT_DIR$/.idea/modules/kodilla-hibernate/kodilla-course.kodilla-hibernate.main.iml" />
     </modules>
   </component>
 </project>
