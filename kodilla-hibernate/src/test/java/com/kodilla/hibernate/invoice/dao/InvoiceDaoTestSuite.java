@@ -30,6 +30,10 @@ public class InvoiceDaoTestSuite {
         Product productTwo = new Product("Ipad");
         Product productThree = new Product("Tablet");
 
+        productDao.save(productOne);
+        productDao.save(productTwo);
+        productDao.save(productThree);
+
         Item itemOne = new Item(productOne, new BigDecimal("10000"), 10, new BigDecimal("123"));
         Item itemTwo = new Item(productTwo, new BigDecimal("2999"), 20, new BigDecimal("95"));
         Item itemThree = new Item(productThree, new BigDecimal("799"), 30, new BigDecimal("113"));

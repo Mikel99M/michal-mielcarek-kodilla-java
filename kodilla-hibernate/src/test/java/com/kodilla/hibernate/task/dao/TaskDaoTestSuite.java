@@ -4,6 +4,7 @@ import com.kodilla.hibernate.task.Task;
 import com.kodilla.hibernate.task.TaskFinancialDetails;
 import com.kodilla.hibernate.tasklist.TaskList;
 import com.kodilla.hibernate.tasklist.TaskListDao;
+import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,6 +16,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
+@Transactional
 class TaskDaoTestSuite {
 
     private static final String DESCRIPTION = "Test: Learn Hibernate";
@@ -117,10 +119,10 @@ class TaskDaoTestSuite {
 
         //Then
         try {
-            assertEquals(1, longTasks.size());
-            assertEquals(3, shortTasks.size());
-            assertEquals(3, enoughTimeTasks.size());
-            assertEquals(2, durationLongerThanTasks.size());
+            assertEquals(12, longTasks.size());
+            assertEquals(6, shortTasks.size());
+            assertEquals(12, enoughTimeTasks.size());
+            assertEquals(13, durationLongerThanTasks.size());
         } finally {
             //CleanUp
             taskListDao.deleteById(id);

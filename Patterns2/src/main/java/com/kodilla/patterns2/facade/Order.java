@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-
     private ProductService productService;
     private final List<Item> items = new ArrayList<>();
     private final Long orderId;
@@ -19,11 +18,11 @@ public class Order {
         this.userId = userId;
         this.productService = productService;
     }
-
     public BigDecimal calculateValue() {
         BigDecimal sum = BigDecimal.ZERO;
         for (Item item : items) {
-            sum = sum.add(productService.getPrice(item.getProductId())
+            sum =
+                    sum.add(productService.getPrice(item.getProductId())
                             .multiply(new BigDecimal(item.getQty())));
         }
         return sum;
