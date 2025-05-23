@@ -26,14 +26,6 @@
           </set>
         </option>
       </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/Patterns2" />
-        <option name="gradleJvm" value="#JAVA_HOME" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/kodilla-patterns-2" />
-        <option name="gradleJvm" value="#JAVA_HOME" />
-      </GradleProjectSettings>
     </option>
   </component>
 </project>
