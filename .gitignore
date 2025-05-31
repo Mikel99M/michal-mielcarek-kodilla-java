@@ -36,5 +36,7 @@ out/
 ### VS Code ###
 .vscode/
 
-### hmm to wystarczy?
+#build gradle
 kodilla-hibernate/build.gradle
+kodilla-JDBC/build.gradle
+kodi
