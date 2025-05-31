@@ -39,4 +39,7 @@ out/
 #build gradle
 kodilla-hibernate/build.gradle
 kodilla-JDBC/build.gradle
-kodi
+kodilla-patterns/build.gradle
+kodilla-spring/build.gradle
+kodilla-spring-web/build.gradle
+kodilla-stream/build.gradle
